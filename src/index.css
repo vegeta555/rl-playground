@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+/*
+ * 设计 tokens · 原神风配色（docs/WORKPLAN.md §4.6）
+ * 墨蓝描金框架 + 羊皮纸阅读底 + 七元素图表色板。
+ */
+@theme {
+  /* 墨蓝（框架底色、标题文字） */
+  --color-ink: #3b4354;
+  --color-ink-soft: #495366;
+  --color-ink-deep: #2f3646;
+
+  /* 描金 */
+  --color-gold: #d3bc8e;
+  --color-gold-bright: #e0c386;
+  --color-gold-deep: #b8935a;
+
+  /* 羊皮纸（阅读区） */
+  --color-parchment: #faf6ee;
+  --color-parchment-card: #f4eee1;
+
+  /* 文字 */
+  --color-inktext: #3b4255;
+  --color-subtext: #6c7688;
+
+  /* 状态色 */
+  --color-star: #ffd766;
+  --color-danger: #df5d57;
+
+  /* 七元素图表色板（算法/曲线身份色） */
+  --color-pyro: #ef7938;
+  --color-hydro: #4cc2f1;
+  --color-anemo: #74c2ab;
+  --color-electro: #af6ec6;
+  --color-dendro: #a5c83b;
+  --color-geo: #f8b955;
+  --color-cryo: #9fd6e3;
+
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --font-sans: 'Noto Sans SC', 'Microsoft YaHei', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-inktext);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
