@@ -190,7 +190,7 @@ rl-playground/
 
 | 里程碑 | 内容 | 完成标志 | 估时 |
 |--------|------|---------|------|
-| **M0 脚手架** 🔶 | ✅ 2026-09-03：Vite 8 + React 19 + TS + Tailwind v4 脚手架（`base=/rl-playground/`）、路由骨架、墨蓝描金设计 tokens、rl-core 种子随机数模块（7 测试全绿）、lint/test/build 全通过、git 已提交 | 本地完成；**待创建 GitHub 远端仓库并推送，开启 Pages** | 0.5 天 |
+| **M0 脚手架** ✅ | 2026-09-03 完成：Vite 8 + React 19 + TS + Tailwind v4 脚手架（`base=/rl-playground/`）、墨蓝描金设计 tokens、rl-core 种子随机数模块（7 测试绿）、首页+课程大纲骨架；GitHub 仓库 vegeta555/rl-playground，CI（lint+test+build）全绿 | 线上站点 https://vegeta555.github.io/rl-playground/ 可访问 ✅ | 0.5 天 |
 | **M1 导论章** ☐ | 首页 + 课程导航 + 第 0 章 + `PlaybackControls`/`AgentEnvLoop` 动画；按 4.6 落地设计 tokens，定稿元素色分配 | 第一个完整章节上线 | 1~2 天 |
 | **M2 表格型 RL** ☐ | 第 1~5 章 + GridWorld 渲染器 + Q-Learning/SARSA 实验场 + LiveChart | **核心里程碑**：对比模式跑通悬崖行走，收敛测试通过 | 3~5 天 |
 | **M3 DQN** ☐ | 微型 NN + Worker 训练协议 + CartPole + 第 6 章 | 浏览器内 DQN 稳定 CartPole（≥195 回报） | 3~5 天 |
@@ -243,3 +243,5 @@ rl-playground/
 - 2026-09-03 v0.1：初稿，含四个已确认核心决策（D0a-D0d）。
 - 2026-09-03 v0.2：确认 D1-D4；新增视觉设计规范（4.6）；部署定为 GitHub Pages；项目更名 rl-playground。
 - 2026-09-03 v0.3：M0 脚手架完成（实际安装 React 19.2 / Vite 8.2 / Tailwind 4.3，框架行由 React 18 修正为 19）；首页+课程大纲骨架、rl-core 种子模块上线；待用户决策 GitHub 推送。
+- 2026-09-03 v0.4：M0 闭环——用户手动开启 Pages，CI 全绿，站点上线 https://vegeta555.github.io/rl-playground/ 。开始 M1。
+- 网络备注：本机直连 github.com 不稳定，git 推送可用一次性代理参数 `git -c http.proxy=http://127.0.0.1:7897 push`（本地代理端口 7897）。
