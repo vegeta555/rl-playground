@@ -1,6 +1,6 @@
 # 可视化强化学习教学网站 · 工作文档
 
-> 版本：v0.2（2026-09-03）
+> 版本：v0.3（2026-09-03）
 > 本文档是项目的唯一事实来源（Single Source of Truth）。里程碑完成后更新状态勾选；决策确认后回填第 8 节。
 
 ---
@@ -111,7 +111,7 @@
 
 | 领域 | 选择 | 理由 |
 |------|------|------|
-| 框架 | React 18 + TypeScript + Vite | 生态成熟；TS 类型利于教学代码可读性；Vite 开发体验好 |
+| 框架 | React 19 + TypeScript + Vite | 生态成熟；TS 类型利于教学代码可读性；Vite 开发体验好 |
 | 内容 | MDX | 章节文案中直接嵌入交互组件，图文与代码一体化 |
 | 样式 | Tailwind CSS | 快速搭建统一风格，避免手写大量 CSS |
 | 渲染 | 原生 Canvas 2D | 教学场景规模小，无需 PixiJS/Three.js 重依赖 |
@@ -190,7 +190,7 @@ rl-playground/
 
 | 里程碑 | 内容 | 完成标志 | 估时 |
 |--------|------|---------|------|
-| **M0 脚手架** ☐ | 仓库 rl-playground + Vite/React/TS/Tailwind 初始化（`base=/rl-playground/`）、路由骨架、rl-core 目录、GitHub Actions：测试 + Pages 发布 | 空站点经 GitHub Pages 可访问，CI 绿 | 0.5~1 天 |
+| **M0 脚手架** 🔶 | ✅ 2026-09-03：Vite 8 + React 19 + TS + Tailwind v4 脚手架（`base=/rl-playground/`）、路由骨架、墨蓝描金设计 tokens、rl-core 种子随机数模块（7 测试全绿）、lint/test/build 全通过、git 已提交 | 本地完成；**待创建 GitHub 远端仓库并推送，开启 Pages** | 0.5 天 |
 | **M1 导论章** ☐ | 首页 + 课程导航 + 第 0 章 + `PlaybackControls`/`AgentEnvLoop` 动画；按 4.6 落地设计 tokens，定稿元素色分配 | 第一个完整章节上线 | 1~2 天 |
 | **M2 表格型 RL** ☐ | 第 1~5 章 + GridWorld 渲染器 + Q-Learning/SARSA 实验场 + LiveChart | **核心里程碑**：对比模式跑通悬崖行走，收敛测试通过 | 3~5 天 |
 | **M3 DQN** ☐ | 微型 NN + Worker 训练协议 + CartPole + 第 6 章 | 浏览器内 DQN 稳定 CartPole（≥195 回报） | 3~5 天 |
@@ -242,3 +242,4 @@ rl-playground/
 
 - 2026-09-03 v0.1：初稿，含四个已确认核心决策（D0a-D0d）。
 - 2026-09-03 v0.2：确认 D1-D4；新增视觉设计规范（4.6）；部署定为 GitHub Pages；项目更名 rl-playground。
+- 2026-09-03 v0.3：M0 脚手架完成（实际安装 React 19.2 / Vite 8.2 / Tailwind 4.3，框架行由 React 18 修正为 19）；首页+课程大纲骨架、rl-core 种子模块上线；待用户决策 GitHub 推送。
