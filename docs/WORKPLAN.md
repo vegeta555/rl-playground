@@ -134,6 +134,7 @@
 - **算法正确性**：每个算法配固定种子的收敛性测试（如"Q-Learning 在 4x4 GridWorld 上 2000 episode 内平均回报 ≥ 阈值"），CI 跑 Vitest。
 - **对拍验证**：DQN/PPO 实现与 Python 参考实现（Stable-Baselines3）在相同超参下对拍 reward 曲线形态，防"能跑但错"。
 - **教学评审 checklist**：每章发布前过一遍——直觉先行？公式准确？实验默认参数能出好结果？术语中英对照齐全？
+- **MDX 中文写作规范**（M1 实测教训）：① 粗体紧邻全角标点+汉字时 CommonMark 不解析（如 `**…（RL）**研究`），改用 `<strong>`；② 表格需 remark-gfm；③ 行内变量一律写成数学模式 `$s_t$`，不用 HTML 下标。
 
 ### 4.5 项目目录结构
 
@@ -191,7 +192,7 @@ rl-playground/
 | 里程碑 | 内容 | 完成标志 | 估时 |
 |--------|------|---------|------|
 | **M0 脚手架** ✅ | 2026-09-03 完成：Vite 8 + React 19 + TS + Tailwind v4 脚手架（`base=/rl-playground/`）、墨蓝描金设计 tokens、rl-core 种子随机数模块（7 测试绿）、首页+课程大纲骨架；GitHub 仓库 vegeta555/rl-playground，CI（lint+test+build）全绿 | 线上站点 https://vegeta555.github.io/rl-playground/ 可访问 ✅ | 0.5 天 |
-| **M1 导论章** ☐ | 首页 + 课程导航 + 第 0 章 + `PlaybackControls`/`AgentEnvLoop` 动画；按 4.6 落地设计 tokens，定稿元素色分配 | 第一个完整章节上线 | 1~2 天 |
+| **M1 导论章** ✅ | 2026-09-04 完成：MDX 工具链（remark-math + GFM + rehype-katex）、`PlaybackControls` 通用操控条、`CorridorEnv` 教学环境（5 测试）、`AgentEnvLoop` 交互动画（自动/手动双模式、令牌飞行动画、要素说明面板、交互日志表）、第 0 章完整文案、章节懒加载路由；浏览器实测交互通过 | 第一个完整章节上线 https://vegeta555.github.io/rl-playground/ （CI 绿后） | 1 天 |
 | **M2 表格型 RL** ☐ | 第 1~5 章 + GridWorld 渲染器 + Q-Learning/SARSA 实验场 + LiveChart | **核心里程碑**：对比模式跑通悬崖行走，收敛测试通过 | 3~5 天 |
 | **M3 DQN** ☐ | 微型 NN + Worker 训练协议 + CartPole + 第 6 章 | 浏览器内 DQN 稳定 CartPole（≥195 回报） | 3~5 天 |
 | **M4 策略梯度与 PPO** ☐ | 第 7、8 章 + REINFORCE/PPO 训练器 + Pendulum | PPO 稳定 Pendulum，clip 交互演示完成 | 3~5 天 |
@@ -234,7 +235,7 @@ rl-playground/
 | D2 | 界面语言 | 中文 + 英文术语对照 | ✅ 已确认 |
 | D3 | 视觉风格 | 原神风配色（墨蓝描金 + 羊皮纸 + 七元素图表色板，见 4.6，不使用游戏素材） | ✅ 已确认 |
 | D4 | 部署目标 | GitHub Pages + Actions 自动发布 | ✅ 已确认 |
-| D5 | 图表库 | uPlot / 自研 canvas 图表（M1 定夺） | ⬜ M1 决策 |
+| D5 | 图表库 | uPlot（M2 实现 LiveChart 时引入：轻量 ~40KB、高频更新性能最佳，配色经 CSS 变量定制） | ✅ 已决策 |
 
 ---
 
@@ -244,4 +245,5 @@ rl-playground/
 - 2026-09-03 v0.2：确认 D1-D4；新增视觉设计规范（4.6）；部署定为 GitHub Pages；项目更名 rl-playground。
 - 2026-09-03 v0.3：M0 脚手架完成（实际安装 React 19.2 / Vite 8.2 / Tailwind 4.3，框架行由 React 18 修正为 19）；首页+课程大纲骨架、rl-core 种子模块上线；待用户决策 GitHub 推送。
 - 2026-09-03 v0.4：M0 闭环——用户手动开启 Pages，CI 全绿，站点上线 https://vegeta555.github.io/rl-playground/ 。开始 M1。
-- 网络备注：本机直连 github.com 不稳定，git 推送可用一次性代理参数 `git -c http.proxy=http://127.0.0.1:7897 push`（本地代理端口 7897）。
+- 网络备注：本机直连 github.com 不稳定，git 推送可用一次性代理参数 `git -c http.proxy=http://127.0.0.1:7897 push`（本地代理端口 7897）。推送失败时先探测直连/代理哪条通，用通的那条。
+- 2026-09-04 v0.5：M1 导论章完成并上线；D5 决策为 uPlot；新增 MDX 中文写作规范（4.4）。下一站 M2 表格型 RL（核心里程碑）。
