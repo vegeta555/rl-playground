@@ -23,6 +23,9 @@ export const CHAPTERS: ChapterMeta[] = [
   { id: '08-ppo', index: 8, title: 'Actor-Critic 与 PPO', tagline: '稳定训练的艺术', milestone: 'M4', element: 'hydro' },
 ]
 
+/** 已上线的章节（首页标记 + 章节导航用） */
+export const LIVE_CHAPTERS = new Set(['00-intro'])
+
 export const ELEMENT_COLOR: Record<ChapterMeta['element'], string> = {
   pyro: 'var(--color-pyro)',
   hydro: 'var(--color-hydro)',

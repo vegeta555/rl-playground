@@ -8,3 +8,4 @@
  */
 
 export * from './seed'
+export * from './env/corridor'

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CHAPTERS, ELEMENT_COLOR } from './Layout'
+import { CHAPTERS, ELEMENT_COLOR, LIVE_CHAPTERS } from './Layout'
 
 export function HomePage() {
   return (
@@ -21,12 +21,12 @@ export function HomePage() {
         <p className="relative mt-4 text-sm text-parchment/85">
           看得见的算法，玩得起来的实验场。从多臂老虎机到 PPO，用直觉理解强化学习。
         </p>
-        <a
-          href="#outline"
+        <Link
+          to="/chapter/00-intro"
           className="relative mt-6 inline-block rounded border border-gold bg-transparent px-6 py-2 text-sm text-gold-bright transition-colors hover:bg-gold hover:text-ink"
         >
-          开始学习
-        </a>
+          从第 0 章开始学习
+        </Link>
       </section>
 
       {/* 课程大纲 */}
@@ -45,9 +45,15 @@ export function HomePage() {
                   className="inline-block h-2.5 w-2.5 rounded-full"
                   style={{ backgroundColor: ELEMENT_COLOR[ch.element] }}
                 />
-                <span className="rounded-sm border border-gold/60 px-1.5 py-0.5 text-[10px] tracking-wider text-gold-deep">
-                  {ch.milestone}
-                </span>
+                {LIVE_CHAPTERS.has(ch.id) ? (
+                  <span className="rounded-sm border border-gold bg-gold-bright/30 px-1.5 py-0.5 text-[10px] tracking-wider text-inktext">
+                    ★ 已上线
+                  </span>
+                ) : (
+                  <span className="rounded-sm border border-gold/60 px-1.5 py-0.5 text-[10px] tracking-wider text-gold-deep">
+                    {ch.milestone}
+                  </span>
+                )}
               </div>
               <h3 className="font-serif font-bold text-inktext group-hover:text-ink">
                 {String(ch.index).padStart(2, '0')} · {ch.title}

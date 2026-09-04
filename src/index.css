@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 /*
  * 设计 tokens · 原神风配色（docs/WORKPLAN.md §4.6）
@@ -45,4 +46,57 @@ body {
   color: var(--color-inktext);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* 章节正文的排版配色（配合 @tailwindcss/typography 的 prose 类） */
+.rl-prose {
+  --tw-prose-body: var(--color-inktext);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-subtext);
+  --tw-prose-links: var(--color-gold-deep);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-gold-deep);
+  --tw-prose-bullets: var(--color-gold);
+  --tw-prose-hr: var(--color-gold);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-quote-borders: var(--color-gold);
+  --tw-prose-captions: var(--color-subtext);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-th-borders: var(--color-gold);
+  --tw-prose-td-borders: color-mix(in srgb, var(--color-gold) 40%, transparent);
+}
+
+/* Agent-Env 循环动画的令牌飞行 */
+@keyframes rl-fly-right {
+  from {
+    left: 3%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  to {
+    left: 93%;
+    opacity: 0;
+  }
+}
+
+@keyframes rl-fly-left {
+  from {
+    left: 93%;
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  to {
+    left: 3%;
+    opacity: 0;
+  }
 }
